@@ -23,6 +23,7 @@ public class Medidas {
             System.out.println("(5) - Tabuada");
             System.out.println("(6) - Finbonacci");
             System.out.println("(7) - Contagem regressiva");
+            System.out.println("(8) - CDivisao por zero");
             System.out.println("(S) - Sair");
 
             opcao = entrada.nextLine();//leitura da opcao
@@ -50,6 +51,9 @@ public class Medidas {
                 case "7":
                     contagemRegressiva();
                     break;
+                case "8":
+                    divisaoPorZero();
+                    break;
                 case "s":
                 case "S":
                     System.out.println("Agradecemos pela preferencia !!");
@@ -58,20 +62,21 @@ public class Medidas {
                 //   System.out.println("Opção invalida: " + opcao);
             }
         }
-            if (area > 0) {
-                System.out.println("A area e de: " + area + "m²");
-            }
+        if (area > 0) {
+            System.out.println("A area e de: " + area + "m²");
+        }
 
 
     }
+
     public static int calcularAreaDoQuadrado() {
         int lado;
 
         System.out.println("Digite o tamanho do lado: ");
         lado = entrada.nextInt();
 
-        for(int linha = 1; linha <= lado; linha ++) {
-            for (int coluna = 1; coluna <= lado; coluna ++) {
+        for (int linha = 1; linha <= lado; linha++) {
+            for (int coluna = 1; coluna <= lado; coluna++) {
                 System.out.print("█");
             }
             System.out.println("");
@@ -93,7 +98,8 @@ public class Medidas {
         altura = entrada.nextInt();
         return base * altura;
     }
-    public static int calcularAreaDoTriangulo(){
+
+    public static int calcularAreaDoTriangulo() {
         int base;
         int altura;
 
@@ -101,52 +107,54 @@ public class Medidas {
         base = entrada.nextInt();
         System.out.println("Agora digite a altura: ");
         altura = entrada.nextInt();
-        return (base * altura)/2;
+        return (base * altura) / 2;
 
     }
-    public static double calcularAreaDoCirculo(){
+
+    public static double calcularAreaDoCirculo() {
 
         double raio;
 
         //raio = Float.parseFloat(in.nextLine());
         //rea = Math.PI * Math.pow(raio, 2);
         //System.out.println("A area do circulo de raio " +
-          //      raio + " é igual a " + area);
+        //      raio + " é igual a " + area);
 
         System.out.println("Digite o raio do circulo: ");
-        raio =Float.parseFloat(entrada.nextLine());
-        return  (Math.PI * Math.pow(raio, 2));
+        raio = Float.parseFloat(entrada.nextLine());
+        return (Math.PI * Math.pow(raio, 2));
 
     }
 
-    public static void tabuada(){
+    public static void tabuada() {
         System.out.println("Você quer calcular a tabuada de qual numero??");
-        byte numero= entrada.nextByte();
+        byte numero = entrada.nextByte();
 
-        for(byte i=1 ; i <= 10; i++){
-            System.out.println(numero+ " x "+ i +" = "+numero * i );
+        for (byte i = 1; i <= 10; i++) {
+            System.out.println(numero + " x " + i + " = " + numero * i);
 
         }
     }
-    public static void fibonacci(){
+
+    public static void fibonacci() {
         System.out.println("Quantos numeros deseja calcular na sequencia? ");
         byte numero = entrada.nextByte();
 
-        switch (numero){
+        switch (numero) {
             case 0:
                 System.out.println("A sequencia esta vazia");
                 break;
             case 1:
-            System.out.println("Sequencia de Fibonnacci: 1");
-            break;
+                System.out.println("Sequencia de Fibonnacci: 1");
+                break;
             default:
-                int num1 =1;
+                int num1 = 1;
                 int num2 = 1;
 
                 System.out.println("Sequencia de Fibonnacci: 1");
-                for(byte i =2; i <= numero; i++){
+                for (byte i = 2; i <= numero; i++) {
                     int fib = num1 + num2;
-                    System.out.print(fib +" ");
+                    System.out.print(fib + " ");
                     num1 = num2;
                     num2 = fib;
                 }
@@ -170,19 +178,32 @@ public class Medidas {
             System.out.println("A sequencia e vazia");
         }*/
     }
-    public static void contagemRegressiva(){
+
+    public static void contagemRegressiva() {
         System.out.print("Começar a contagem a partir de qual numero??");
         int numero = entrada.nextInt();
 
         System.out.print("Diminuindo de quantos em quantos numeros??");
         int decrescimo = entrada.nextInt();
 
-        for(int i =numero; i >= 1; i -= decrescimo){
+        for (int i = numero; i >= 1; i -= decrescimo) {
 
             System.out.println(i);
         }
 
     }
 
+    public static void divisaoPorZero() {
+        try {
+            System.out.println("Qual e o dividendo?? (Numero a ser dividido)");
+        float dividendo = entrada.nextInt();
+        System.out.println("Qual o divisor?? (Numero ue vai dividir o dividendo)");
+        float divisor = entrada.nextInt();
 
+
+            System.out.println("o resultado e : " + dividendo / divisor);
+        } catch(Exception e)   {
+            System.out.println("nao e possivel dividir por zero - Erro "+ e.getMessage());
+        }
+    }
 }

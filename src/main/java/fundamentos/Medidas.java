@@ -13,7 +13,7 @@ public class Medidas {
         double area = 0; //recebe o resultado dos calculos de area
 
         //instanciar o objeto de leitura do console
-        while (!opcao.toUpperCase().equals("s")) {
+       // while (!opcao.toUpperCase().equals("s")) {
 
             System.out.println("Escolha o calculo desejado");
             System.out.println("(1) - Area do quadrado");
@@ -58,14 +58,14 @@ public class Medidas {
                 case "S":
                     System.out.println("Agradecemos pela preferencia !!");
                     break;
-                // default:
-                //   System.out.println("Opção invalida: " + opcao);
+                 default:
+                     System.out.println("Opção invalida: " + opcao);
             }
-        }
-        if (area > 0) {
-            System.out.println("A area e de: " + area + "m²");
-        }
 
+            if (area > 0) {
+                System.out.println("A area e de: " + area + "m²");
+            }
+        //}
 
     }
 
@@ -202,8 +202,12 @@ public class Medidas {
 
 
             System.out.println("o resultado e : " + dividendo / divisor);
+
         } catch(Exception e)   {
             System.out.println("nao e possivel dividir por zero - Erro "+ e.getMessage());
+        }
+        finally {
+            System.out.println("por hoje é só pessoal!!");
         }
     }
 }

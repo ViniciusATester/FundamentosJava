@@ -13,58 +13,58 @@ public class Medidas {
         double area = 0; //recebe o resultado dos calculos de area
 
         //instanciar o objeto de leitura do console
-       // while (!opcao.toUpperCase().equals("s")) {
+        // while (!opcao.toUpperCase().equals("s")) {
 
-            System.out.println("Escolha o calculo desejado");
-            System.out.println("(1) - Area do quadrado");
-            System.out.println("(2) - Area do retangulo");
-            System.out.println("(3) - Area do triangulo");
-            System.out.println("(4) - Area do  circulo");
-            System.out.println("(5) - Tabuada");
-            System.out.println("(6) - Finbonacci");
-            System.out.println("(7) - Contagem regressiva");
-            System.out.println("(8) - CDivisao por zero");
-            System.out.println("(S) - Sair");
+        System.out.println("Escolha o calculo desejado");
+        System.out.println("(1) - Area do quadrado");
+        System.out.println("(2) - Area do retangulo");
+        System.out.println("(3) - Area do triangulo");
+        System.out.println("(4) - Area do  circulo");
+        System.out.println("(5) - Tabuada");
+        System.out.println("(6) - Finbonacci");
+        System.out.println("(7) - Contagem regressiva");
+        System.out.println("(8) - CDivisao por zero");
+        System.out.println("(S) - Sair");
 
-            opcao = entrada.nextLine();//leitura da opcao
+        opcao = entrada.nextLine();//leitura da opcao
 
 
-            switch (opcao) {
-                case "1":
-                    area = calcularAreaDoQuadrado();
-                    break;
-                case "2":
-                    area = calcularAreaDoRetangulo();
-                    break;
-                case "3":
-                    area = calcularAreaDoTriangulo();
-                    break;
-                case "4":
-                    area = calcularAreaDoCirculo();
-                    break;
-                case "5":
-                    tabuada();
-                    break;
-                case "6":
-                    fibonacci();
-                    break;
-                case "7":
-                    contagemRegressiva();
-                    break;
-                case "8":
-                    divisaoPorZero();
-                    break;
-                case "s":
-                case "S":
-                    System.out.println("Agradecemos pela preferencia !!");
-                    break;
-                 default:
-                     System.out.println("Opção invalida: " + opcao);
-            }
+        switch (opcao) {
+            case "1":
+                area = calcularAreaDoQuadrado();
+                break;
+            case "2":
+                area = calcularAreaDoRetangulo();
+                break;
+            case "3":
+                area = calcularAreaDoTriangulo();
+                break;
+            case "4":
+                area = calcularAreaDoCirculo();
+                break;
+            case "5":
+                tabuada();
+                break;
+            case "6":
+                fibonacci();
+                break;
+            case "7":
+                contagemRegressiva();
+                break;
+            case "8":
+                divisaoPorZero();
+                break;
+            case "s":
+            case "S":
+                System.out.println("Agradecemos pela preferencia !!");
+                break;
+            default:
+                System.out.println("Opção invalida: " + opcao);
+        }
 
-            if (area > 0) {
-                System.out.println("A area e de: " + area + "m²");
-            }
+        if (area > 0) {
+            System.out.println("A area e de: " + area + "m²");
+        }
         //}
 
     }
@@ -193,20 +193,21 @@ public class Medidas {
 
     }
 
+
+
     public static void divisaoPorZero() {
         try {
             System.out.println("Qual e o dividendo?? (Numero a ser dividido)");
-        float dividendo = entrada.nextInt();
-        System.out.println("Qual o divisor?? (Numero ue vai dividir o dividendo)");
-        float divisor = entrada.nextInt();
+            float dividendo = entrada.nextInt();
+            System.out.println("Qual o divisor?? (Numero ue vai dividir o dividendo)");
+            float divisor = entrada.nextInt();
 
 
             System.out.println("o resultado e : " + dividendo / divisor);
 
-        } catch(Exception e)   {
-            System.out.println("nao e possivel dividir por zero - Erro "+ e.getMessage());
-        }
-        finally {
+        } catch (Exception e) {
+            System.out.println("nao e possivel dividir por zero - Erro " + e.getMessage());
+        } finally {
             System.out.println("por hoje é só pessoal!!");
         }
     }
